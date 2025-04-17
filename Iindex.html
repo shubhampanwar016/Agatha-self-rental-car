@@ -1,0 +1,72 @@
+
+
+
+---
+
+Filename: App.js
+
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { PhoneCall } from "lucide-react";
+
+const cars = [
+  {
+    name: "Mahindra Scorpio",
+    model: "2020",
+    price: "₹4500/day",
+    fuel: "Diesel",
+    transmission: "Manual",
+    ac: "Full AC",
+  },
+  {
+    name: "Maruti Ciaz",
+    model: "2022",
+    price: "₹2500/day",
+    fuel: "Petrol",
+    transmission: "Manual",
+    ac: "Full AC",
+  },
+];
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gray-100 p-6">
+      <h1 className="text-4xl font-bold text-center mb-8">
+        Agatha Self Rental Car
+      </h1>
+      <div className="grid md:grid-cols-2 gap-6">
+        {cars.map((car, index) => (
+          <Card key={index} className="rounded-2xl shadow-md">
+            <CardContent className="p-6 space-y-3">
+              <h2 className="text-2xl font-semibold">{car.name}</h2>
+              <p>Model: {car.model}</p>
+              <p>Price: {car.price}</p>
+              <p>Fuel Type: {car.fuel}</p>
+              <p>Transmission: {car.transmission}</p>
+              <p>AC: {car.ac}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      <div className="mt-10 text-center">
+        <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
+        <div className="flex flex-col items-center space-y-2">
+          <div className="flex items-center space-x-2">
+            <PhoneCall className="w-5 h-5" />
+            <span>9899080016</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <PhoneCall className="w-5 h-5" />
+            <span>9971785414</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+---
+
+Aap GitHub
+
